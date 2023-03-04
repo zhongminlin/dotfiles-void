@@ -43,6 +43,7 @@ dash
 dbus
 dbus-libs
 dbus-x11
+deadbeef
 dejavu-fonts-ttf
 desktop-file-utils
 device-mapper
@@ -52,9 +53,11 @@ dnssec-anchors
 dosfstools
 double-conversion
 dracut
+duktape
 e2fsprogs
 e2fsprogs-libs
 ed
+elogind
 enchant2
 encodings
 ethtool
@@ -64,6 +67,7 @@ exa
 exo
 expat
 f2fs-tools
+faad2
 fbset
 fbterm
 fbv
@@ -101,6 +105,7 @@ fontmanager
 freetype
 fribidi
 fuse
+fuse3
 gawk
 gcc
 gdbm
@@ -208,6 +213,8 @@ libcanberra-gtk3
 libcap
 libcap-ng
 libcap-progs
+libcddb
+libcdio
 libcdparanoia
 libcolord
 libconfig
@@ -265,12 +272,14 @@ libjpeg-turbo-tools
 libkmod
 libldap
 libldns
+liblilv
 libllvm12
 liblqr
 libltdl
 libluv
 liblz4
 liblzma
+libmad
 libmagic
 libmagick
 libmanette
@@ -279,6 +288,7 @@ libmnl
 libmodplug
 libmount
 libmpg123
+libmysofa
 libnetfilter_conntrack
 libnfnetlink
 libnftnl
@@ -294,6 +304,7 @@ libpcap
 libpciaccess
 libpcre
 libpcre2
+libpipewire
 libpng
 libproxy
 libpsl
@@ -308,12 +319,19 @@ libsasl
 libseccomp
 libsecret
 libsensors
+libserd
 libsigc++
 libsmartcols
 libsndfile
 libsodium
+libsord
 libsoup
 libsoxr
+libspa-alsa
+libspa-audioconvert
+libspa-audiomixer
+libspa-control
+libspa-v4l2
 libspectre
 libspeex
 libsrt
@@ -365,6 +383,7 @@ libxml2
 libxshmfence
 libxslt
 libyaml
+libzip
 libzstd
 linux
 linux-base
@@ -406,6 +425,7 @@ oclock
 openssh
 openssl
 opus
+opusfile
 orc
 os-prober
 p11-kit
@@ -435,8 +455,10 @@ perl-URI
 pfetch
 picom
 pipes.c
+pipewire
 pixman
 pkg-config
+polkit
 procps-ng
 psutils
 pulseaudio
@@ -500,6 +522,7 @@ smproxy
 snappy
 speexdsp
 sqlite
+sratom
 starship
 startup-notification
 sudo
@@ -553,6 +576,7 @@ xcmsdb
 xconsole
 xcursorgen
 xdg-dbus-proxy
+xdg-desktop-portal
 xdg-utils
 xdpyinfo
 xev
