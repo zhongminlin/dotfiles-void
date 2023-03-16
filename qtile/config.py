@@ -65,15 +65,32 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "w", lazy.spawn("qutebrowser"), desc="Launch browser"),
+    Key([mod], "f", lazy.spawn("pcmanfm"), desc="Launch file manager"),
+    Key([mod], "e", lazy.spawn("geany"), desc="Launch editor"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "x", lazy.spawn("/home/zlin/PyBye/pybye.py"), desc="Power menu"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+
+    Key(['mod1'], "p", lazy.spawn("pulsemixer --change-volume +5"), desc='Volume Up'),
+    Key(['mod1'], "o", lazy.spawn("pulsemixer --change-volume -5"), desc='Volume down'),
+    Key(['mod1'], "m", lazy.spawn("pulsemixer --toggle-mute"), desc='Volume Mute'),
+    # Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause"), desc='playerctl'),
+    # Key([], "XF86AudioPrev", lazy.spawn("playerctl previous"), desc='playerctl'),
+    # Key([], "XF86AudioNext", lazy.spawn("playerctl next"), desc='playerctl'),
+    # Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10%+"), desc='brightness UP'),
+    # Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10%-"), desc='brightness Down'),
+
 ]
 
-groups = [Group(i) for i in "123456789"]
+
+grouplabel = ["壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"]
+groups = [Group(f"{i+1}", label=grouplabel[i]) for i in range(9)]
+# groups = [Group(i) for i in  '123456789']
 
 for i in groups:
     keys.extend(
@@ -99,14 +116,25 @@ for i in groups:
         ]
     )
 
+colors = []
+cache = '/home/zlin/.cache/wal/colors'
+def load_colors(cache):  
+    with open(cache, 'r') as file:
+        for i in range(9):
+            colors.append(file.readline().strip())
+    colors.append('#ffffff')
+    lazy.reload()
+load_colors(cache)
+
 layouts = [
-    layout.Columns(border_focus_stack=["#a491ad", "#caa9e0"], border_width=2, margin=6 ),
-    layout.Max(),
+        layout.MonadTall(border_focus=colors[1], border_normal=colors[0], border_width=2, margin=6 ),
+        layout.Columns(border_focus=colors[1],border_focus_stack=[colors[1], colors[5]], border_normal=colors[0], border_width=2, margin=6 ),
+        layout.Floating(border_focus=colors[1], border_normal=colors[0], border_width=2 ),
+        layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
@@ -126,47 +154,120 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
+                widget.CurrentLayoutIcon(
+                    background=colors[0],
+                    foreground=colors[8],
+                    padding=0,
+                    scale=0.5,
+                    font='CaskaydiaCove Nerd Font'
+                ),
                 widget.CurrentLayout(
-                    background="#232042",
-                    foreground="#d0daf0"
+                    background=colors[0],
+                    foreground=colors[7],
+                    font='CaskaydiaCove Nerd Font'
                     ),
                 widget.GroupBox(
-                    background="#232042",
-                    foreground="#d0daf0"
+                    font='Noto Sans CJK SC',
+                    active=colors[6],
+                    this_current_screen_border=colors[6],
+                    this_current_border=colors[6],
+                    background=colors[0],
+                    foreground=colors[7]
                     ),
                 widget.Prompt(
-                    background="#232042",
-                    foreground="#d0daf0"
-                    ),
+                    background=colors[0],
+                    foreground=colors[7]
+                   ),
                 widget.WindowName(
-                    background="#232042",
-                    foreground="#d0daf0"
+                    background=colors[0],
+                    foreground=colors[7],
+                    font='CaskaydiaCove Nerd Font',
                     ),
                 widget.Chord(
                     chords_colors={
-                        "launch": ("#91b1f0", "#d0daf0")
+                        "launch": (colors[8], colors[7])
                     },
                     name_transform=lambda name: name.upper(),
-                    background="#9cc1f3",
-                    foreground="#d0daf0"
+                    background=colors[6],
+                    foreground=colors[7]
                 ),
-                widget.TextBox("default config", 
-                               name="default",
-                               background="#232042",
-                               foreground="#acb7ed"
-                               ),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#a491ad", background="#232042"),
+                # widget.TextBox("default config", 
+                               # name="default",
+                               # background="#232042",
+                               # foreground="#acb7ed"
+                               # ),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground=colors[1], background=colors[0]),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.Systray(foreground="#d0daf0", background="#232042"),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p", foreground="#91b1f0", background="#232042"),
-                widget.QuickExit(foreground="#a893d4", background="#232042"),
+                widget.Systray(
+                    background=colors[0],
+                    icon_size=15,
+                    padding=15
+                    ),
+                widget.CPU(
+                        font='CaskaydiaCove Nerd Font',
+                        foreground=colors[5],
+                        background=colors[0],
+                        format=' {load_percent}%',
+                        padding=0
+                        ),
+                widget.Memory(
+                    format='﬙{MemUsed: .0f}{mm}',
+                    font="CaskaydiaCove Nerd Font",
+                    fontsize=12,
+                    padding=10,
+                    background=colors[0],
+                    foreground=colors[2]
+                    ),
+                widget.TextBox(
+                    text="",
+                    font="CaskaydiaCove Nerd Font",
+                    fontsize=12,
+                    padding=0,
+                    foreground=colors[3],
+                    background=colors[0],
+                    ),
+                # widget.Volume(
+                #         font='CaskaydiaCove Nerd Font',
+                #         foreground=colors[3],
+                #         background=colors[0],
+                #         ),
+                widget.PulseVolume(
+                    font='CaskaydiaCove Nerd Font',
+                    fontsize=12,
+                    padding=5,
+                    foreground=colors[3],
+                    background=colors[0],
+                    ),
+                widget.Wttr(
+                        font='CaskaydiaCove Nerd Font',
+                        foreground=colors[4],
+                        background=colors[0],
+                        padding=10,
+                        location={
+                            'Toronto': 'TO',
+                            },
+                        format='%C %t'
+                        ),
+                widget.Clock(
+                        format="  %Y-%m-%d %a %I:%M %p",
+                        foreground=colors[1],
+                        background=colors[0],
+                        font="CaskaydiaCove Nerd Font"
+                        ),
+                widget.QuickExit(
+                        foreground=colors[2],
+                        background=colors[0],
+                        default_text='⏻',
+                        padding=10,
+                        font="CaskaydiaCove Nerd Font"
+                        ),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
-    ),
+        ),
 ]
 
 # Drag floating layouts.
