@@ -29,6 +29,16 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+colors = []
+cache = '/home/zlin/.cache/wal/colors'
+def load_colors(cache):  
+    with open(cache, 'r') as file:
+        for i in range(9):
+            colors.append(file.readline().strip())
+    colors.append('#ffffff')
+    lazy.reload()
+load_colors(cache)
+
 mod = "mod4"
 terminal = guess_terminal()
 
@@ -74,7 +84,8 @@ keys = [
     Key([mod], "x", lazy.spawn("/home/zlin/PyBye/pybye.py"), desc="Power menu"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawn("dmenu_run -b -fn 'CaskaydiaCove Nerd Font-7.5' -nb '" + colors[0] +"' -nf '" + colors[7] + "' -sf '" + colors[7] + "' -sb '" + colors[1] + "'"), desc="dmenu"),
 
     Key(['mod1'], "p", lazy.spawn("pulsemixer --change-volume +5"), desc='Volume Up'),
     Key(['mod1'], "o", lazy.spawn("pulsemixer --change-volume -5"), desc='Volume down'),
@@ -116,15 +127,6 @@ for i in groups:
         ]
     )
 
-colors = []
-cache = '/home/zlin/.cache/wal/colors'
-def load_colors(cache):  
-    with open(cache, 'r') as file:
-        for i in range(9):
-            colors.append(file.readline().strip())
-    colors.append('#ffffff')
-    lazy.reload()
-load_colors(cache)
 
 layouts = [
         layout.MonadTall(border_focus=colors[1], border_normal=colors[0], border_width=2, margin=6 ),
