@@ -38,3 +38,27 @@ return {
   base0F = "$color9",
 }
 EOF
+
+cat > $HOME/.config/qutebrowser/config.py <<- EOF
+config.load_autoconfig()
+
+base00 = "$color0"
+base01 = "$color16"
+base02 = "$color17"
+base03 = "$color18"
+base04 = "$color19"
+base05 = "$color20"
+base06 = "$color21"
+base07 = "$color15"
+base08 = "$color1"
+base09 = "$color3"
+base0A = "$color11"
+base0B = "$color2"
+base0C = "$color6"
+base0D = "$color4"
+base0E = "$color5"
+base0F = "$color9"
+
+EOF
+
+cat $HOME/.config/qutebrowser/apply-colors.py >> $HOME/.config/qutebrowser/config.py  
