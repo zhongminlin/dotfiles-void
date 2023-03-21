@@ -1,3 +1,7 @@
+# fonts
+c.fonts.default_family = "CaskaydiaCove Nerd Font"
+c.fonts.default_size = "8pt"
+
 # set qutebrowser colors
 
 # Text color of the completion widget. May be a single color to use for

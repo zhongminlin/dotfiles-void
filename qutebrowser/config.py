@@ -1,21 +1,25 @@
 config.load_autoconfig()
 
-base00 = "#0d0a08"
-base01 = "#16110e"
-base02 = "#2d221b"
-base03 = "#8b6b56"
-base04 = "#969169"
-base05 = "#d5d3c3"
-base06 = "#e4e2d8"
-base07 = "#eae9e1"
-base08 = "#9D5338"
-base09 = "#687881"
-base0A = "#74858f"
-base0B = "#BE9F53"
-base0C = "#A2A8A2"
-base0D = "#788A87"
-base0E = "#58B8E8"
-base0F = "#b05d3f"
+base00 = "#17131e"
+base01 = "#231d2e"
+base02 = "#2f273d"
+base03 = "#656578"
+base04 = "#b5b5c1"
+base05 = "#b8b8d9"
+base06 = "#c8c9e2"
+base07 = "#d9d9eb"
+base08 = "#CA966C"
+base09 = "#4B4DA0"
+base0A = "#5557af"
+base0B = "#655B94"
+base0C = "#A394A8"
+base0D = "#8F6994"
+base0E = "#9267BD"
+base0F = "#d1a47f"
+
+# fonts
+c.fonts.default_family = "CaskaydiaCove Nerd Font"
+c.fonts.default_size = "8pt"
 
 # set qutebrowser colors
 
