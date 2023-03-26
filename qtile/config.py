@@ -81,6 +81,7 @@ keys = [
     Key([mod], "w", lazy.spawn("qutebrowser"), desc="Launch browser"),
     Key([mod], "f", lazy.spawn("pcmanfm"), desc="Launch file manager"),
     Key([mod], "e", lazy.spawn("geany"), desc="Launch editor"),
+    Key([mod], "k", lazy.spawn("kitty"), desc="Launch kitty"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
@@ -132,7 +133,7 @@ for i in groups:
 
 
 layouts = [
-        layout.MonadTall(border_focus=colors[1], border_normal=colors[0], border_width=2, margin=6 ),
+        layout.MonadTall(border_focus=colors[1], border_normal=colors[0], border_width=2, margin=10 ),
         layout.Columns(border_focus=colors[1],border_focus_stack=[colors[1], colors[5]], border_normal=colors[0], border_width=2, margin=6 ),
         layout.Floating(border_focus=colors[1], border_normal=colors[0], border_width=2 ),
         layout.Max(),
