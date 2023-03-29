@@ -91,9 +91,9 @@ keys = [
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "r", lazy.spawn("dmenu_run -b -fn 'CaskaydiaCove Nerd Font-7.5' -nb '" + colors[0] +"' -nf '" + colors[7] + "' -sf '" + colors[7] + "' -sb '" + colors[1] + "'"), desc="dmenu"),
 
-    Key(['mod1'], "p", lazy.spawn("pulsemixer --change-volume +5"), desc='Volume Up'),
-    Key(['mod1'], "o", lazy.spawn("pulsemixer --change-volume -5"), desc='Volume down'),
-    Key(['mod1'], "m", lazy.spawn("pulsemixer --toggle-mute"), desc='Volume Mute'),
+    Key(['mod1'], "p", lazy.spawn("amixer -c 0 sset Master 2%+"), desc='Volume Up'),
+    Key(['mod1'], "o", lazy.spawn("amixer -c 0 sset Master 2%-"), desc='Volume down'),
+    Key(['mod1'], "m", lazy.spawn("amixer -c 0 sset Master toggle"), desc='Volume Mute'),
     # Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause"), desc='playerctl'),
     # Key([], "XF86AudioPrev", lazy.spawn("playerctl previous"), desc='playerctl'),
     # Key([], "XF86AudioNext", lazy.spawn("playerctl next"), desc='playerctl'),
@@ -233,18 +233,18 @@ screens = [
                     foreground=colors[3],
                     background=colors[0],
                     ),
-                # widget.Volume(
-                #         font='CaskaydiaCove Nerd Font',
-                #         foreground=colors[3],
-                #         background=colors[0],
-                #         ),
-                widget.PulseVolume(
-                    font='CaskaydiaCove Nerd Font',
-                    fontsize=12,
-                    padding=5,
-                    foreground=colors[3],
-                    background=colors[0],
-                    ),
+                widget.Volume(
+                        font='CaskaydiaCove Nerd Font',
+                        foreground=colors[3],
+                        background=colors[0],
+                        ),
+                # widget.PulseVolume(
+                #     font='CaskaydiaCove Nerd Font',
+                #     fontsize=12,
+                #     padding=5,
+                #     foreground=colors[3],
+                #     background=colors[0],
+                #     ),
                 widget.Wttr(
                         font='CaskaydiaCove Nerd Font',
                         foreground=colors[4],

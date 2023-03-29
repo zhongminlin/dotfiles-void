@@ -9,6 +9,7 @@ adwaita-icon-theme
 alacritty
 alacritty-terminfo
 alsa-lib
+alsa-plugins-ffmpeg
 alsa-utils
 apulse
 arc-icon-theme
@@ -45,6 +46,7 @@ cantarell-fonts
 cbonsai
 celt
 cmatrix
+cmus
 coreutils
 cpio
 curl
@@ -265,6 +267,7 @@ libdb
 libde265
 libdebuginfod
 libdecor
+libdiscid
 libdjvulibre
 libdrm
 libedit
@@ -477,6 +480,7 @@ nghttp2
 nitrogen
 nodejs
 noto-fonts-cjk
+noto-fonts-emoji
 npth
 nspr
 nss
@@ -524,13 +528,13 @@ pipes.c
 pipewire
 pixman
 pkg-config
+playerctl
 polkit
 popt
 procps-ng
 psutils
 pulseaudio
 pulseaudio-utils
-pulsemixer
 python3
 python3-Jinja2
 python3-MarkupSafe
@@ -552,6 +556,7 @@ python3-pycparser
 python3-setuptools
 python3-sip-PyQt5
 python3-six
+python3-urwid
 python3-xcffib
 python3-yaml
 pywal
@@ -611,6 +616,7 @@ transset
 tree-sitter
 tslib
 tty-clock
+tuimoji
 twolame
 tzdata
 unibilium
@@ -649,6 +655,7 @@ xcb-util-keysyms
 xcb-util-renderutil
 xcb-util-wm
 xcb-util-xrm
+xclip
 xclipboard
 xclock
 xcmsdb
