@@ -217,14 +217,16 @@ screens = [
                         format=' {load_percent}%',
                         padding=0
                         ),
+                widget.Sep(padding=15,foreground=colors[7],size_percent=50),
                 widget.Memory(
                     format='﬙{MemUsed: .0f}{mm}',
                     font="CaskaydiaCove Nerd Font",
                     fontsize=12,
-                    padding=10,
+                    padding=0,
                     background=colors[0],
                     foreground=colors[2]
                     ),
+                widget.Sep(padding=15,foreground=colors[7],size_percent=50),
                 widget.TextBox(
                     text="",
                     font="CaskaydiaCove Nerd Font",
@@ -238,6 +240,7 @@ screens = [
                         foreground=colors[3],
                         background=colors[0],
                         ),
+                widget.Sep(padding=15,foreground=colors[7],size_percent=50),
                 # widget.PulseVolume(
                 #     font='CaskaydiaCove Nerd Font',
                 #     fontsize=12,
@@ -249,23 +252,33 @@ screens = [
                         font='CaskaydiaCove Nerd Font',
                         foreground=colors[4],
                         background=colors[0],
-                        padding=10,
+                        padding=0,
                         location={
-                            'Toronto': 'TO',
+                            '43.6529206,-79.3849007': 'Toronto',
                             },
-                        format='%C %t'
+                        format='%c%t'
                         ),
+                widget.Sep(padding=15,foreground=colors[7],size_percent=50),
+                widget.Net(
+                        font='CaskaydiaCove Nerd Font',
+                        foreground=colors[5],
+                        background=colors[0],
+                        format='↓{down} ↑{up}',
+                        ),
+                # widget.Wlan(),
+                widget.Sep(padding=15,foreground=colors[7],size_percent=50),
                 widget.Clock(
                         format="  %Y-%m-%d %a %I:%M %p",
                         foreground=colors[1],
                         background=colors[0],
                         font="CaskaydiaCove Nerd Font"
                         ),
+                widget.Sep(padding=15,foreground=colors[7],size_percent=50),
                 widget.QuickExit(
                         foreground=colors[2],
                         background=colors[0],
-                        default_text='⏻',
-                        padding=10,
+                        default_text='⏻ ',
+                        padding=0,
                         font="CaskaydiaCove Nerd Font"
                         ),
             ],
