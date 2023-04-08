@@ -6,7 +6,9 @@
 
 config_version: 2
 settings:
+  content.javascript.can_access_clipboard:
+    global: false
   fonts.default_family:
-    global: CaskaydiaCove Nerd Font
+    global: CaskaydiaCove Nerd Font,Noto Color Emoji
   fonts.default_size:
     global: 8pt

@@ -1,5 +1,8 @@
+# clipboard
+c.content.javascript.can_access_clipboard = True
+
 # fonts
-c.fonts.default_family = "CaskaydiaCove Nerd Font"
+c.fonts.default_family = [ "CaskaydiaCove Nerd Font", "Noto Color Emoji" ]
 c.fonts.default_size = "8pt"
 
 # set qutebrowser colors

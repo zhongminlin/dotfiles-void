@@ -1,24 +1,27 @@
 config.load_autoconfig()
 
-base00 = "#17131e"
-base01 = "#231d2e"
-base02 = "#2f273d"
-base03 = "#656578"
-base04 = "#b5b5c1"
-base05 = "#b8b8d9"
-base06 = "#c8c9e2"
-base07 = "#d9d9eb"
-base08 = "#CA966C"
-base09 = "#4B4DA0"
-base0A = "#5557af"
-base0B = "#655B94"
-base0C = "#A394A8"
-base0D = "#8F6994"
-base0E = "#9267BD"
-base0F = "#d1a47f"
+base00 = "#05060a"
+base01 = "#0d101b"
+base02 = "#161a2c"
+base03 = "#6d7171"
+base04 = "#babcbc"
+base05 = "#c4cecc"
+base06 = "#d2d9d8"
+base07 = "#e0e5e4"
+base08 = "#6B645F"
+base09 = "#7B886F"
+base0A = "#88947c"
+base0B = "#7F7777"
+base0C = "#98A4A5"
+base0D = "#8D9076"
+base0E = "#8797A7"
+base0F = "#78716b"
+
+# clipboard
+c.content.javascript.can_access_clipboard = True
 
 # fonts
-c.fonts.default_family = "CaskaydiaCove Nerd Font"
+c.fonts.default_family = [ "CaskaydiaCove Nerd Font", "Noto Color Emoji" ]
 c.fonts.default_size = "8pt"
 
 # set qutebrowser colors
