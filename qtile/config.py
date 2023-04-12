@@ -89,8 +89,8 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "r", lazy.spawn("dmenu_run -b -fn 'CaskaydiaCove Nerd Font-7.5' -nb '" + colors[0] +"' -nf '" + colors[7] + "' -sf '" + colors[7] + "' -sb '" + colors[1] + "'"), desc="dmenu"),
-
+    # Key([mod], "r", lazy.spawn("dmenu_run -b -fn 'CaskaydiaCove Nerd Font-7.5' -nb '" + colors[0] +"' -nf '" + colors[7] + "' -sf '" + colors[7] + "' -sb '" + colors[1] + "'"), desc="dmenu"),
+    Key([mod], "r", lazy.spawn("/home/zlin/.config/rofi/launchers/type-1/launcher.sh"), desc="rofi"),
     Key(['mod1'], "p", lazy.spawn("amixer -c 0 sset Master 2%+"), desc='Volume Up'),
     Key(['mod1'], "o", lazy.spawn("amixer -c 0 sset Master 2%-"), desc='Volume down'),
     Key(['mod1'], "m", lazy.spawn("amixer -c 0 sset Master toggle"), desc='Volume Mute'),

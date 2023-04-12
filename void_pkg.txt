@@ -86,6 +86,7 @@ ethtool
 eudev
 eudev-libudev
 exa
+exiftool
 exo
 expat
 f2fs-tools
@@ -617,7 +618,6 @@ pulseaudio-utils
 python3
 python3-Jinja2
 python3-MarkupSafe
-python3-Pillow
 python3-PyQt5
 python3-PyQt5-opengl
 python3-PyQt5-quick
@@ -625,14 +625,17 @@ python3-PyQt5-sql
 python3-PyQt5-webchannel
 python3-PyQt5-webengine
 python3-adblock
+python3-attrs
 python3-cairo
 python3-cairocffi
 python3-cffi
 python3-dbus
+python3-docopt
 python3-gobject
 python3-iwlib
 python3-mpd2
 python3-mutagen
+python3-pillow-simd
 python3-pip
 python3-ply
 python3-psutil
@@ -642,6 +645,7 @@ python3-sip-PyQt5
 python3-six
 python3-urwid
 python3-xcffib
+python3-xlib
 python3-yaml
 pywal
 qt5-core
@@ -714,6 +718,7 @@ tuimoji
 twolame
 tzdata
 udisks2
+ueberzug
 unibilium
 unzip
 usbutils
@@ -760,6 +765,7 @@ xconsole
 xcursorgen
 xdg-dbus-proxy
 xdg-desktop-portal
+xdg-user-dirs
 xdg-utils
 xdpyinfo
 xev
