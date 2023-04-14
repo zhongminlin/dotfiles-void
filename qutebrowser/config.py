@@ -1,8 +1,8 @@
 config.load_autoconfig()
 
-base00 = "#05060a"
-base01 = "#0d101b"
-base02 = "#161a2c"
+base00 = "#0A0B11"
+base01 = "#131621"
+base02 = "#1d2031"
 base03 = "#6d7171"
 base04 = "#babcbc"
 base05 = "#c4cecc"
@@ -16,6 +16,9 @@ base0C = "#98A4A5"
 base0D = "#8D9076"
 base0E = "#8797A7"
 base0F = "#78716b"
+
+# dark mode
+c.colors.webpage.darkmode.enabled = True
 
 # clipboard
 c.content.javascript.can_access_clipboard = True

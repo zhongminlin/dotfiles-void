@@ -1,3 +1,6 @@
+# dark mode
+c.colors.webpage.darkmode.enabled = True
+
 # clipboard
 c.content.javascript.can_access_clipboard = True
 
