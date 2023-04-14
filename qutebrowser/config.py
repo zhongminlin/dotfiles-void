@@ -1,8 +1,8 @@
 config.load_autoconfig()
 
-base00 = "#0A0B11"
-base01 = "#131621"
-base02 = "#1d2031"
+base00 = "#05060a"
+base01 = "#0d101b"
+base02 = "#161a2c"
 base03 = "#6d7171"
 base04 = "#babcbc"
 base05 = "#c4cecc"
